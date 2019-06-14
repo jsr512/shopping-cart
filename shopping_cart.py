@@ -31,14 +31,20 @@ total_price = 0
 selected_ids = []
 now = datetime.datetime.now()
 
+valid_ids = [str(p["id"]) for p in products]
+
 while True: 
     selected_id = input('Please input a product indentifier: ')
-    
+
     if selected_id == "DONE":
         break
     
-    else:
+    elif str(selected_id) in valid_ids: 
         selected_ids.append(selected_id) 
+
+    else:
+        print("Item number is not valid. Please reneter")
+        next 
 
 #
 #Infor Display / Output
@@ -65,7 +71,7 @@ final_price = (total_price + tax)
 
 print(" ")
 print("-----------")
-print("Total Price of Items: " + "$" + "{0:.2f}".format((total_price))) 
+print("Price of Items: " + "$" + "{0:.2f}".format((total_price))) 
 print("Tax: " + "$" "{0:.2f}".format(tax))
 print("-----------")
 print(" ")
