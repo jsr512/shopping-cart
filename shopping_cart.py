@@ -81,3 +81,19 @@ print(" ")
 print("Thank You For Shopping at Jim's! Please come again Soon.")
 print(" ") 
 
+## EMAILING RECEIPT
+
+while True: 
+    email_request = input("Would you like a receipt emailed to you? Enter Y/N: ")
+
+    if email_request == "Y":
+        print("Y") #action needed here
+    
+    elif email_request == "N": 
+        break
+
+    else:
+        print("Invalid Entry. Please eneter either Y or N")
+        next 
+
+
