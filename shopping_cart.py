@@ -33,14 +33,21 @@ products = [
 #Info Capture / Input
 #
 
-selected_id = input('Please input a product indentifier: ')
-matching_products = [p for p in products if str(p[('id')]) == str(selected_id)]
-matching_product = matching_products[0]
-print("Selected Product: " + matching_product["name"] + " " + str(matching_product["price"]))
+while True: 
+    selected_id = input('Please input a product indentifier: ')
+    
+    if selected_id == "DONE":
+        break
+    
+    matching_products = [p for p in products if str(p[('id')]) == str(selected_id)]
+    matching_product = matching_products[0]
+    print("Selected Product: " + matching_product["name"] + " " + str(matching_product["price"]))
 
 #
 #Infor Display / Output
 #
+
+
 
 #A grocery store name of your choice
 #A grocery store phone number and/or website URL and/or address of choice
