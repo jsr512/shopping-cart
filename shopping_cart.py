@@ -44,6 +44,7 @@ while True:
 #Infor Display / Output
 #
 
+print(" ")
 print("------------------")
 print("Jim's NYU Grocery")
 print("555-555-5555")
@@ -62,18 +63,15 @@ for selected_id in selected_ids:
 tax = total_price * .0875
 final_price = (total_price + tax)
 
+print(" ")
 print("-----------")
 print("Total Price of Items: " + "$" + "{0:.2f}".format((total_price))) 
+print("Tax: " + "$" "{0:.2f}".format(tax))
 print("-----------")
 print(" ")
-
-print("Tax: " + "$" "{0:.2f}".format(tax))
-print(" ")
-
 print("Final Amount Due: " + "$" + "{0:.2f}".format(final_price))
-
-
-#The amount of tax owed (e.g. $0.39), calculated by multiplying the total cost by a New York City sales tax rate of 8.75% (for the purposes of this project, groceries are not exempt from sales tax)
-#The total amount owed, formatted as US dollars and cents (e.g. $4.89), calculated by adding together the amount of tax owed plus the total cost of all shopping cart items
-#A friendly message thanking the customer and/or encouraging the customer to shop again
+print(" ")
+print(" ")
+print("Thank You For Shopping at Jim's! Please come again Soon.")
+print(" ") 
 
