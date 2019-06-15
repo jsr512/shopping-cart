@@ -1,4 +1,7 @@
 import datetime 
+import os
+from sendgrid import SendGridAPIClient
+from sendgrid.helpers.mail import Mail
 
 products = [
     {"id":1, "name": "Chocolate Sandwich Cookies", "department": "snacks", "aisle": "cookies cakes", "price": 3.50},
@@ -81,19 +84,35 @@ print(" ")
 print("Thank You For Shopping at Jim's! Please come again Soon.")
 print(" ") 
 
-## EMAILING RECEIPT
+## CAPTURE EMAIL ADDRESS
 
 while True: 
     email_request = input("Would you like a receipt emailed to you? Enter Y/N: ")
 
     if email_request == "Y":
-        print("Y") #action needed here
+        send_address = input("Please eneter your email: ") 
+        break  
     
     elif email_request == "N": 
-        break
+        exit()
 
     else:
         print("Invalid Entry. Please eneter either Y or N")
         next 
 
+## EMAILING RECEIPT
+#
+#message = Mail(
+#    from_email=os.environ.get("MY_EMAIL_ADDRESS"),
+#    to_emails=send_address,
+#    subject='Your Receipt',
+#    html_content='<strong>and easy to do anywhere, even with Python</strong>')
+#try:
+#    sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
+#    response = sg.send(message)
+#    print(response.status_code)
+#    print(response.body)
+#    print(response.headers)
+#except Exception as e:
+#    print("Oops")
 
