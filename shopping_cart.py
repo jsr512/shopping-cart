@@ -109,7 +109,6 @@ message = Mail(
     subject='Your Receipt',
     html_content='Thank You For Shopping With Us')
 
-
 try:
     sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
     response = sg.send(message)

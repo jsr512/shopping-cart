@@ -29,4 +29,9 @@ Run the program:
     python shopping-cart.py
     ''
 
+Enter the items purchased using the number of each item
+Enter "DONE" once complete
+Your receipt will be printed 
+A prompt will ask if you would like to received an email. Entere "Y" or "N"
+
 
