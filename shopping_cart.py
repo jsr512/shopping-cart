@@ -81,7 +81,7 @@ print(" ")
 print("Final Amount Due: " + "$" + "{0:.2f}".format(final_price))
 print(" ")
 print(" ")
-print("Thank You For Shopping at Jim's! Please come again Soon.")
+print("Thank You For Shopping at Jim's! Please come again soon.")
 print(" ") 
 
 ## CAPTURE EMAIL ADDRESS
@@ -94,6 +94,7 @@ while True:
         break  
     
     elif email_request == "N": 
+        print('Please ask cashier for paper copy if needed. Have a Great Day!')
         exit()
 
     else:
@@ -101,18 +102,20 @@ while True:
         next 
 
 ## EMAILING RECEIPT
-#
-#message = Mail(
-#    from_email=os.environ.get("MY_EMAIL_ADDRESS"),
-#    to_emails=send_address,
-#    subject='Your Receipt',
-#    html_content='<strong>and easy to do anywhere, even with Python</strong>')
-#try:
-#    sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
-#    response = sg.send(message)
-#    print(response.status_code)
-#    print(response.body)
-#    print(response.headers)
-#except Exception as e:
-#    print("Oops")
+
+message = Mail(
+    from_email=(os.environ.get("MY_EMAIL_ADDRESS")),
+    to_emails=send_address,
+    subject='Your Receipt',
+    html_content='Thank You For Shopping With Us')
+
+
+try:
+    sg = SendGridAPIClient(os.environ.get('SENDGRID_API_KEY'))
+    response = sg.send(message)
+    print(response.status_code)
+    print(response.body)
+    print(response.headers)
+except Exception as e:
+    print("Oops")
 
